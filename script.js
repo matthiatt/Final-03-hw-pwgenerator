@@ -1,15 +1,16 @@
-let minCharLength = 8;
-let maxCharLength = 50;
+var specialCharacters;
+var numCharacters;
+var upperCase;
+var lowerCase;
+var idLength = "";
 const characterNormal = ["a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z"];
 const characterCaps = ["A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q,, R, S, T, U, V, W, X, Y, Z"];
 const characterNums = ["0, 1, 2, 3, 4, 5, 6, 7, 8, 9"];
 const characterSpecial = ["!, @, #, $, %, ^, &, *, -,  =, +, _, ?"];
-const mainKeyTempPw = ["a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, 1, 2, 3, 4, 5, 6, 7, 8, 9, !, @, #, $, %, ^, &, *, -, =, +, _, ?"];
-let id = "";
-
 // Hoisting const throughout the process of showing and hiding the generated PW. //
-const pwBtn = document.querySelector("generate")
-const button = document.getElementById('generate');
+// const pwBtn = document.querySelector("generate")
+// const button = document.getElementById('generate');
+
 
 function butnListenEvent() {
     button.addEventListener('click', event => {
@@ -17,7 +18,7 @@ function butnListenEvent() {
     userInput();
     userChoicesArrayGenerator();
     newGeneratedPw();
-    choicesArr = [];
+    userChoicesArr = [];
     });
 }
 
@@ -31,17 +32,33 @@ function butnListenEvent() {
 //     }
 
 function newGeneratedPw() {
-    if (choicesArr.length < typeNumbers.length || getLength < 8) {
-        alert("You did not meet the minimum standard ")
+    if (userChoicesArr.length < characterNums.length || getPwLength < 8) {
+        alert("You did not meet the min requirments. Please try again!");
     } else {
-        for (i = 0; i < getlength; i++) {
-            newPassword += choicesArr[Math.floor(Math.random() * (choicesArr.length - 1))];
+        for (i = 0; i < getPwlength; i++) {
+            newPw += userChoicesArr[Math.floor(Math.random() * (userChoicesArr.length - 1))];
         }
-        displayPasswordEl.textContent = newPassword;
-    }
-    newPassword = [];
+        displayPasswordEl.textContent = newPw;
+    // }
+    newPw = [];
 } 
 
+
+
+// function userInput() {
+//     getPwlength = prompt("Please select the length of your password - 8 - 50 characters");
+// }
+
+function passwordCoppied() {
+    document.getElementById("password").select();
+    document.execCommand("copy");
+    alert("You successfully copied the password to your clipboard.");
+
+var charCopy = document.getElementById("copy");
+    charCopy.addEventListener("click", function () {
+        copyPassword();
+});
+}
 // function hidePass() {
   // Thanks again to Sathanus, on discord, for the suggestion of keeping
   // **NOTE** I am Sathanus on Discord. 
@@ -75,13 +92,3 @@ function newGeneratedPw() {
 // })}
 
 // Add in dbClick feature to copy to clipboard and a button
-function passwordCoppied() {
-    document.getElementById("password").select();
-    document.execCommand("copy");
-    alert("You successfully copied the password to your clipboard.");
-
-var charCopy = document.getElementById("copy");
-    charCopy.addEventListener("click", function () {
-        copyPassword();
-});
-}

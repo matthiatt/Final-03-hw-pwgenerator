@@ -2,13 +2,13 @@ var specialCharacters;
 var numCharacters;
 var upperCase;
 var lowerCase;
-var idLength = "";
+var idNewPw = "";
 const characterNormal = ["a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z"];
 const characterCaps = ["A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q,, R, S, T, U, V, W, X, Y, Z"];
 const characterNums = ["0, 1, 2, 3, 4, 5, 6, 7, 8, 9"];
 const characterSpecial = ["!, @, #, $, %, ^, &, *, -,  =, +, _, ?"];
 // Hoisting const throughout the process of showing and hiding the generated PW. //
-// const pwBtn = document.querySelector("generate")
+var pwBtn = document.querySelector("password");
 // const button = document.getElementById('generate');
 
 
@@ -38,8 +38,8 @@ function newGeneratedPw() {
         for (i = 0; i < getPwlength; i++) {
             newPw += userChoicesArr[Math.floor(Math.random() * (userChoicesArr.length - 1))];
         }
-        displayPasswordEl.textContent = newPw;
-    // }
+        pwBtn.textContent = newPw;
+    }
     newPw = [];
 } 
 

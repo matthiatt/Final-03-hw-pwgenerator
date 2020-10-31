@@ -19,26 +19,31 @@
           <h2>Generate a Password</h2>
         </div>
         <div id="card-body">
-          <div id="cardTarget"></div>
-          <div id="clickAppearAction"></div>
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          >
-          </textarea>
-          <div class="col-sm-3 specialChars">
-            <input type="checkbox" id="special" checked /> !@#$%
-          </div>
-          <div class="col-sm-3">
-            <input type="checkbox" id="nums" checked /> 0-9
-          </div>
-          <div class="col-sm-3">
-            <input type="checkbox" id="lower" checked /> a-z
-          </div>
-          <div class="col-sm-3">
-            <input type="checkbox" id="upper" checked /> A-Z
+          <div>
+            <div id="cardTarget"></div>
+            <textarea
+              readonly
+              id="password"
+              placeholder="Your Secure Password"
+              aria-label="Generated Password"
+            >
+            </textarea>
+            <!-- <div class="col-sm-3" id="checks1">
+              <input type="checkbox" id="special" checked /> Special Characters
+            </div>
+            <div class="col-sm-3" id="checks2">
+              <input type="checkbox" id="nums" checked /> Numbers (0 - 9)
+            </div>
+            <div class="col-sm-3" id="checks3">
+              <input type="checkbox" id="lower" checked /> Lowercase Characters
+              (a-z)
+            </div>
+            <div class="col-sm-3" id="checks4">
+              <input type="checkbox" id="upper" checked /> Uppercase Characters
+              (A-Z)
+            </div>
+            <label>Length of Random Password (8min - 128max characters)</label>
+            <input type="number" maxlength="128" minlength="8" id="length" /> -->
           </div>
         </div>
         <div class="card-footer">

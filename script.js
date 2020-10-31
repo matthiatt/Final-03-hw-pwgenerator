@@ -18,51 +18,53 @@ function butnListenEvent() {
 
 // User clicks button, then to expect a string of random variables based on thier decisions(settings).
 // Calling the variable from line 8.
-function tempPasswordConfig(id) {
-    for (var i = 0; i < 1; i++) {
-        id +=characters.charAt(math.floor(math.random() * charLength));
+function tempPasswordGenerator(id) {
+    for (var i = 0; i < minCharLength; i++) {
+        var pwvVriables = 
     }
     return id;
     }
 
-
+function hidePass() {
+  // Thanks again to Sathanus, on discord, for the suggestion of keeping
+  // **NOTE** I am Sathanus on Discord. 
+  var currentDisplayText=document.querySelector("#password");
+  if(currentDisplayText.value.split(" ")[1]!="password")
+    document.querySelector("#password").value = id;
+}
+  document.querySelector("#password").value=id;
+  copyToClipboard();
 // Creating a function to add extra security to the password.
 // Adding a feature to show and hide the password generated.
-function clickActionDisplay() {
-    var actionDisplayPw = document.getElementById("card-body");
-        if (actionDisplayPw.style.display === "none") {
-            actionDisplayPw.style.display = "block";
-        } else {
-            actionDisplayPw.style.display = "none";
-        } 
+// function clickActionDisplay() {
+//     var actionDisplayPw = document.getElementById("card-body");
+//         if (actionDisplayPw.style.display === "none") {
+//             actionDisplayPw.style.display = "block";
+//         } else {
+//             actionDisplayPw.style.display = "none";
+//         } 
 
 
-$(document).ready(function(){
-  $("#card-body").click(function(clickActionDisplay) {
-    $("p").append(id);
-    return clickActionDisplay();
-  });
-  console.log(clickDisplay);
-  console.log(clickActionDisplay);
-  console.log(display);
-  console.log(document);
+// $(document).ready(function(){
+//   $("#card-body").click(function(clickActionDisplay) {
+//     $("p").append(id);
+//     return clickActionDisplay();
+//   });
+//   console.log(clickDisplay);
+//   console.log(clickActionDisplay);
+//   console.log(display);
+//   console.log(document);
   
-})}
+// })}
 
 // Add in dbClick feature to copy to clipboard and a button
-
-function generateTempPassword() {
-    password.value = tempPassword(card-body.pwLength.value);
-    return id();
-}
-
-var charCopy = document.getElementById("copy");
-charCopy.addEventListener("click", function () {
-    copyPassword();
-});
-
 function passwordCoppied() {
     document.getElementById("password").select();
     document.execCommand("copy");
-    alert("You successfully copied the password to your clipboard.")
+    alert("You successfully copied the password to your clipboard.");
+
+var charCopy = document.getElementById("copy");
+    charCopy.addEventListener("click", function () {
+        copyPassword();
+});
 }

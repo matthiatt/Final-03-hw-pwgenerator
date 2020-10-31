@@ -86,7 +86,7 @@ var password = "";
             password += characterCaps(math.floor(math.random()*characterCaps.length));
         }
     }   
-    return password;
+    return randomPwGenerator();
     }
 
 

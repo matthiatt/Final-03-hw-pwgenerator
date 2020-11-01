@@ -1,11 +1,3 @@
-// var pwBox = document.getElementById("password");
-// var spCheckBox = document.getElementsById("special");
-// var numsCheckbox = document.getElementsById("nums");
-// var lowerCheckbox = document.getElementsById("lower");
-// var upperCheckbox = document.getElementsById("upper");
-// var generate = document.getElementById("generate");
-// var copyPw = document.getElementById("copy");
-// var lengthVal = document.getElementById("length");
 const minPassLength = 8;
 const maxPassLength = 128;
 var generateButton = document.querySelector("generate");
@@ -25,35 +17,44 @@ function inputPassword() {
     generatedPwTxt.value = pw;
     generateButton.addEventListener("click", inputPassword);
 }
+
+var pwBox = document.getElementById("password");
+var spCheckBox = document.getElementsById("special");
+var numsCheckbox = document.getElementsById("nums");
+var lowerCheckbox = document.getElementsById("lower");
+var upperCheckbox = document.getElementsById("upper");
+var generate = document.getElementById("generate");
+var copyPw = document.getElementById("copy");
+var lengthVal = document.getElementById("length");
 // What if no checkbox's are checked in the process of this? I will need to put in some sort of prompt for the user to alert them to fill out information that's needed to execute the job correcty.
 
 // Next what I want to do is to try and define the logic on how the password will be generated based on the users input with the checkboxes that are selected.  Going from top to bottom from my defined list I am defining right below. And then after that, I am going to go grab the variable I defined based on the type of characters being defined.
 
-// generate.addEventListener("click", () => {
-//     const length = lengthVal.value;
-//     const upperCase = upperCheckbox.checked;
-//     const lowerCase = lowerCheckbox.checked;
-//     const numbers = nums.checked;
-//     const symbolMark = spCheckBox.checked;
+generate.addEventListener("click", () => {
+    const length = lengthVal.value;
+    const upperCase = upperCheckbox.checked;
+    const lowerCase = lowerCheckbox.checked;
+    const numbers = nums.checked;
+    const symbolMark = spCheckBox.checked;
 
-// pwBox.innerText = generatedPw(upperCase, length, lowerCase, numbers, symbolMark);
-// });
+pwBox.innerText = inputPassword(upperCase, length, lowerCase, numbers, symbolMark);
+});
 
-// var newPwLength = prompt("Please enter the length of your desired password. (Must be within 8 to 128 characters long.)");
+var newPwLength = prompt("Please enter the length of your desired password. (Must be within 8 to 128 characters long.)");
 
 function randomPwGenerator() {
-    var passwordLength = prompt("Please enter between 8 - 128 characters.");
-    while (passwordLength < 8 || passwordLength > 128) {
-        passwordLength = prompt("Please enter between 8 - 128 characters.");
-    }
-    var upperCharacters = confirm("Would you like to include uppercase characters in your password? (A - Z)");
-    var lowerCharacters = confirm ("Would you like to include lowercase characters in your password? (a - z)");
-    var numCharacters = confirm ("Would you like to include numbers in your password? (0-9)");
-    var specialCharacters = confirm ("Would you like to include special characters in your password?");
-    upperCharacters = confirm("Would you like to include uppercase characters in your password? (A - Z)");
-    lowerCharacters = confirm ("Would you like to include lowercase characters in your password? (a - z)");
-    numCharacters = confirm ("Would you like to include numbers in your password? (0-9)");
-    specialCharacters = confirm ("Would you like to include special characters in your password?");
+    // var passwordLength = prompt("Please enter between 8 - 128 characters.");
+    // while (passwordLength < 8 || passwordLength > 128) {
+    //     passwordLength = prompt("Please enter between 8 - 128 characters.");
+    // }
+    // var upperCharacters = confirm("Would you like to include uppercase characters in your password? (A - Z)");
+    // var lowerCharacters = confirm ("Would you like to include lowercase characters in your password? (a - z)");
+    // var numCharacters = confirm ("Would you like to include numbers in your password? (0-9)");
+    // var specialCharacters = confirm ("Would you like to include special characters in your password?");
+    // upperCharacters = confirm("Would you like to include uppercase characters in your password? (A - Z)");
+    // lowerCharacters = confirm ("Would you like to include lowercase characters in your password? (a - z)");
+    // numCharacters = confirm ("Would you like to include numbers in your password? (0-9)");
+    // specialCharacters = confirm ("Would you like to include special characters in your password?");
 
     if(lowerCharacters == false && upperCharacters == false && numCharacters == false && specialCharacters == false) {
     alert("Please enter a valid response. You must click one or more boxs.");
